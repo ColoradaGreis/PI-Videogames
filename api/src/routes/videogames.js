@@ -29,15 +29,15 @@ router.get('/', async (req, res) => {
 router.post("/", async (req, res) => {
     const {name, image, genres, released, rating, platforms, description} = req.body
      //la accion de crear una nueva instancia es asincrona, como manejo errores? con try y catch
+     if(!name || !rating || !platforms || !genres) res.status(400).send("there are missing values")
      try {
         let newVideogame = await Videogame.create({ //le paso al create el objeto con todos los atributos que quiero que tenga mi nuevo videojuego
             name,
-            image,
-            genres,
-            released,
+            image: image? image : "https://media0.giphy.com/media/g3ZlHx1iqhCOCcY3p2/giphy.gif?cid=ecf05e477iblwpq6v2huuh9f6iymzileg4yww4s8vk1c2gw0&rid=giphy.gif&ct=g",
+            released: released? released : "No Date",
             rating,
             platforms,
-            description
+            description: description? description : "A videogame"
         })
         const relation = await Genre.findAll({
             where: {name: genres}
