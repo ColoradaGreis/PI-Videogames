@@ -1,0 +1,16 @@
+.home {
+  background-color: #07070e;
+}
+.btn {
+  color: black;
+  font-size: 10px;
+  padding: 8px 16px;
+  border: 1px solid #370617;
+  margin: 0 4px;
+  display: inline-block;
+  border-radius: 5px;
+}
+.btn:hover{
+  cursor: pointer;
+  background-color: gray;
+}

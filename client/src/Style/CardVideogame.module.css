@@ -1,0 +1,87 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Orbitron';
+  }
+.card{
+    min-height:200px;
+    width:260px;
+    margin:40px 10px;
+    padding:1rem;
+    cursor:pointer;
+    background-color: #e0d9e8;
+    border: 1px solid white;
+    box-shadow: 
+    0 0 3px #a2a5c6,
+    0 0 6px #7c80af,
+    0 0 9px #7c80af,
+    0 0 12px #696ea3,
+    0 0 15px #575c98,
+    0 0 18px #444a8c;
+    border-radius: 10px;
+}
+.card img{
+    width:100%;
+    height:160px;
+    border-radius:10px;
+    position:relative;
+    z-index:1000;
+    transition:all .5s ease-in-out;
+}
+.card__content{
+    margin:1rem 0;
+    color:#222;
+    overflow:hidden;
+    margin-top:-200px;
+    opacity:0;
+    /* visibility:hidden; */
+    transition:all .5s ease-in-out;
+}
+.nombre {
+    margin:.6rem auto;
+    text-align:center;
+    color: initial;
+    font-size: 15px;
+    visibility:visible;
+    
+}
+.card:hover img{
+    margin-top:-60px;
+    box-shadow:0 0 4px 6px rgba(4, 0, 43, 0.6);
+    transform: scale(1.055)
+}
+.card:hover>.card__content{
+    margin-top:0;
+    opacity:1;
+    /* visibility:visible; */
+  }
+
+.genres {
+    font-size: 12px;
+    line-height:1.8rem;
+    text-align:center;
+    color: #0e0f1c;
+    font-family: monospace;
+    visibility:hidden;
+   
+}
+.card:hover .genres{
+    visibility:visible;
+}
+.card:hover .rating{
+    visibility: visible;
+}
+
+.rating{
+    font-size:12px;
+    line-height:1.8rem;
+    text-align:center;
+    color: #0e0f1c;
+    font-family: 'Orbitron';
+    visibility:hidden;
+ 
+}
+.navlink{
+    text-decoration: none;
+}

@@ -4,6 +4,9 @@ import CardVideogame from "./CardVideogame";
 import { useDispatch } from "react-redux";
 import { useEffect } from 'react';
 import Loading from "./Loading";
+import s from '../Style/Videogames.module.css';
+import Error from "./Error.jsx";
+import img from '../img/penguin.webp';
 
 //Acá hago la lógica para mapear todos los videogames and then los meto en una card a cada uno
 function Videogames({currentGames}) {
@@ -20,13 +23,13 @@ function Videogames({currentGames}) {
   
   return (
 
-    <div>
+    <div className={s.main}>
         { currentGames.length > 0 ? 
         currentGames.map(e => {
             return( <CardVideogame
                 key={e.id}
                 id={e.id}
-                img ={e.img? e.img : "img"}
+                img ={e.img? e.img : img}
                 name={e.name}
                 genres= {e.genres?.map(g => typeof (g) === 'object' ? g.name : g).join(', ')}
                 rating = {e.rating}
@@ -36,7 +39,7 @@ function Videogames({currentGames}) {
         })
 
 
-        : "generar el error"}
+        : <Error /> }
 
         
 

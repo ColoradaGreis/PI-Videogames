@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #07070e;
+}
+.box {
+    display: inline;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+}
+.box select {
+    background-color: #a2a5c6;
+    color: #07070e;
+    padding: 7px;
+    font-size: 12px;
+    outline: none;
+    margin: 10px;
+    border-radius: 10px;
+}
+.box select option {
+    padding: 30px;
+
+}
+.box select:hover {
+    transform: scale(1.055);
+    cursor:pointer;
+}
+

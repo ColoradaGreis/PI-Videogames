@@ -29,6 +29,9 @@ const getApiInfo= async ()=>  {
     }
 
 }
+
+// 
+
 // traigo lo de mi DB
 const getDbInfo = async () => {
     return await Videogame.findAll({

@@ -1,0 +1,7 @@
+.error{
+    color: aliceblue;
+    font-size: 40px;
+    position: fixed;
+    top: 500px;
+    text-shadow: 6px 5px rgb(22, 202, 242), 8px 10px rgb(216, 22, 242);
+}

@@ -1,5 +1,5 @@
 const { Router }= require("express");
-const {getDbInfo, getAllVideogames, getvideogameName} = require('../controllers/index');
+const {getDbInfo, getAllVideogames, getvideogameName, getApiInfo} = require('../controllers/index');
 const { Videogame, Genre }= require("../db");
 
 const router = Router()
@@ -12,6 +12,7 @@ router.get('/', async (req, res) => {
     if(name){
         try {
             const foundGameInApi = await getvideogameName(name)
+            // console.log(foundGameInApi)
             const getallGamesDb = await getDbInfo()
             let findGameInDb = getallGamesDb.filter(el => el.name.toLowerCase().includes(name.toLowerCase()))
             let allResults = findGameInDb.concat(foundGameInApi)
@@ -26,7 +27,7 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.post("/", async (req, res) => {
+router.post("/create", async (req, res) => {
     const {name, image, genres, released, rating, platforms, description} = req.body
      //la accion de crear una nueva instancia es asincrona, como manejo errores? con try y catch
      if(!name || !rating || !platforms || !genres) res.status(400).send("there are missing values")
@@ -50,6 +51,25 @@ router.post("/", async (req, res) => {
      }
 
 })
+router.get('/platforms', async (req, res, next) => {
+        
+    try {
+        const all = await getApiInfo();
+        const allPlatforms = [];
+        all.map(g => g.platforms.map(p => {
+            if(!allPlatforms.includes(p)) {
+                allPlatforms.push(p)
+            }
+        }))
+        
+    
+        allPlatforms.length ? res.status(200).json(allPlatforms) : res.status(404).send('Error')
+
+        }catch(e) {
+            next(e)
+        }
+    })
+
 
 
 module.exports = router

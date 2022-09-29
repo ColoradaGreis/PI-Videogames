@@ -1,4 +1,5 @@
 import React from 'react'
+import s from '../Style/Paginado.module.css';
 
 function Paginado({allGames, paginado}) {
     const pageNumbers = [] //declaro un arreglo vacío
@@ -8,17 +9,21 @@ function Paginado({allGames, paginado}) {
         
     }
     //pusheo a la func de paginado el numero de mi page number
+
+
   return (
     <nav>
-        <ul className='paginado'>
+        <ul className={s.paginado}>
             {pageNumbers &&
             pageNumbers.map(num => (
-                <li className='number'key={num}>
-                <a onClick={() => paginado(num)}>{num}</a>
-                </li>
+                <span className='number'key={num}>
+                <button className={s.btn}  onClick={() => paginado(num)}>{num}</button>
+                </span>
             ))
             }
         </ul>
+
+    
     </nav>
   )
 }

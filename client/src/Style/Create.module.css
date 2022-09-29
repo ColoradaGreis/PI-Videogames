@@ -1,0 +1,235 @@
+.form_box{
+    background: #9e98ca;
+    padding: 45px 0;
+    border-radius: 10px;
+    box-shadow: 
+    0 0 5px #a2a5c6,
+    0 0 10px #7c80af,
+    0 0 15px #7c80af,
+    0 0 20px #696ea3,
+    0 0 25px #575c98,
+    0 0 30px #444a8c;
+    height: auto;
+    display: inline-block;
+    margin-top: 20px;
+ 
+}
+.form {
+    width: 100%;
+    margin: auto;
+}
+.title{
+    text-align: center;
+    font-weight: 700;
+    color: #eceaf4
+}
+.general{
+    position: relative;
+    margin: 45px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+.create_input {
+    background: none;
+    color: #c6c6c6;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #49454567;
+}
+.create_input:focus {
+    outline: none;
+    color: #5e5d5d
+}
+.label {
+    color: white;
+    font-family: 'Orbitron';
+    font-size: 18px;
+    position: absolute;
+    top: -5px;
+    left: 5px;
+    transition: 0.5s all;
+}
+.create_input:focus~.label,
+.create_input:valid~.label {
+    top: -14px;
+    font-size: 15px;
+    color: #495867;
+}
+textarea {
+    width: 470px;
+    max-width: 470px;
+    height: 110px;
+    max-height: 120px;
+    padding: 10px;
+    
+    background: transparent;
+    outline: none;
+    
+    color: whitesmoke;
+    font-family: monospace;
+    font-size: 0.875em;
+    
+    border: solid 2px #49454567;
+}
+.description {
+    color: white;
+    font-family: 'Orbitron';
+    font-size: 18px;
+    position: absolute;
+    top: -25px;
+    left: 5px;
+    transition: 0.5s all;
+    pointer-events: none;
+}
+textarea:focus~.label,
+textarea:valid~.label{
+    top: -30px;
+    font-size: 15px;
+    color: black;
+}
+.barra{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.barra::before{
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(to right, #4a006f, #3eabf4);
+    transition: 0.3s ease;
+    left: 0;
+}
+.create_input:focus~.barra::before{
+    width: 100%;
+}
+.btn_submit{
+    background: #1b1e38;
+    border-radius: 10px;
+    border: 1px solid;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    color: #fff;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 
+    0 0 3px #a2a5c6,
+    0 0 6px #7c80af,
+    0 0 9px #7c80af,
+    0 0 12px #696ea3,
+    0 0 15px #575c98,
+    0 0 18px #444a8c;
+}
+
+.select_create {
+    background-color: #7c80af;
+    color: black;
+    padding: 7px;
+    font-size: 16px;
+    outline: none;
+    margin: 10px;
+    font-family: system-ui;
+    border-radius: 10px;
+}
+
+.select_create .option_create {
+    padding: 30px;
+}
+
+.danger {
+    color: #d90429;
+    line-height: 0px;
+    font-size: 12px;
+    margin-top: 10px;
+    font-family: monospace;
+}
+
+.box_opcion {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    background-color: #494a4d;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.opcion_title {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.btn_remove {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    padding: 0;
+    height: 20px;
+    background: #a4133c;
+    border-radius: 10px;
+}
+
+
+.box_home {
+    margin-top: 20px;
+
+}
+
+.back_home {
+    border-radius: 8px;
+    padding: 8px;
+    text-decoration: none;
+    background: #0e0f1c;
+    border: 1px solid;
+    display: block;
+    width: 20%;
+    margin: 10px auto;
+    color: #fff;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 
+    0 0 3px #a2a5c6,
+    0 0 6px #7c80af,
+    0 0 9px #7c80af,
+    0 0 12px #696ea3,
+    0 0 15px #575c98,
+    0 0 18px #444a8c;
+    font-weight: 400;
+}
+.linkincito{
+ text-decoration: none;
+}
+.test{
+    border-radius: 8px;
+    padding: 8px;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid;
+    display: block;
+    width: 20%;
+    margin: 10px auto;
+    color: #0e0f1c;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 
+    0 0 3px #a2a5c6,
+    0 0 6px #7c80af,
+    0 0 9px #7c80af,
+    0 0 12px #696ea3,
+    0 0 15px #575c98,
+    0 0 18px #444a8c;
+    font-weight: 400;
+}
+.test:active{
+    background: #0e0f1c,
+}

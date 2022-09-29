@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-image: url('./img/backgroundImage.gif.gif') no-repeat 50% 50%;
+
 }
 
 .App-logo {
