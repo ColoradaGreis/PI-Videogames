@@ -36,7 +36,7 @@ export default function SearchBar(){
                         id="name"
                         autoComplete="off"
                     />
-                    <button className={s.btn} type='submit' > <img src={lupa}/></button>
+                    <button className={s.btn} type='submit' > <img src={lupa} alt='search'/></button>
                 </div>
             </form>
         </div>
