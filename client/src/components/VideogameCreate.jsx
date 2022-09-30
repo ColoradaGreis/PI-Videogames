@@ -15,8 +15,8 @@ function validate (input) {
       errors.name = 'Only letters, numbers, hyphens and parentheses are accepted'
     }
   
-    if(input.image.length !== 0 && !/^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/.test(input.image)){
-      errors.image='invalid URL'
+    if(input.img.length !== 0 && !/^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/.test(input.img)){
+      errors.img='invalid URL'
     }
   
     if(!input.description) {
@@ -44,7 +44,7 @@ function VideogameCreate() {
 
     const[input, setInput] = useState({
         name: "",
-        image: "",
+        img: "",
         description: "",
         released: "",
         rating: "",
@@ -81,7 +81,7 @@ function VideogameCreate() {
           dispatch(createVideogame(input));
           setInput({
             name: "",
-            image: "",
+            img: "",
             description: "",
             released: "",
             rating: "",
@@ -164,13 +164,13 @@ function VideogameCreate() {
             <input
               className={s.create_input}
               type="text"
-              name="image"
-              value={input.image}
+              name="img"
+              value={input.img}
               onChange={(e) => handleChange(e)}
               /> <span className={s.barra}></span>
               <label className={s.label} > URL Image: </label>
-                {errors.image && (
-                  <p className={s.danger}>{errors.image}</p>
+                {errors.img && (
+                  <p className={s.danger}>{errors.img}</p>
                 )}
           </div>
 

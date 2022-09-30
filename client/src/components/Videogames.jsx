@@ -35,7 +35,7 @@ function Videogames({currentGames}) {
                 rating = {e.rating}
                 
                 
-                />)
+              />)
         })
 
 

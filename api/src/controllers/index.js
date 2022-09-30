@@ -30,7 +30,7 @@ const getApiInfo= async ()=>  {
 
 }
 
-// 
+// https://i.pinimg.com/originals/21/7d/b4/217db444f2a1ca3a8240b205ea49c86f.jpg
 
 // traigo lo de mi DB
 const getDbInfo = async () => {
