@@ -52,6 +52,7 @@ export function getNameVideogame(name){
     } catch (error) {
       console.log(error)
       
+      
     }
 
  }
