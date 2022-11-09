@@ -47,7 +47,9 @@ router.post("/create", async (req, res) => {
         res.json(newVideogame)
 
      } catch (error) {
-        console.log(error)
+        // console.log(error)
+        res.status(400).send({msg: error})
+
      }
 
 })
