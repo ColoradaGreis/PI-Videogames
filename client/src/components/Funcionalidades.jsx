@@ -1,31 +1,49 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { getByGenres } from '../redux/actions/actions'
+import { getByGenres, filterGames } from '../redux/actions/actions'
 import s from '../Style/Funcionalidades.module.css'
 
-const Funcionalidades = ({ handleFilter, handleSource, handleSort, handleRating }) => {
+const Funcionalidades = ({ setCurrentPage }) => {
   const dispatch = useDispatch()
   const generos = useSelector(state => state.genres)
+  const [filters, setFilters] = useState({
+    rating: '',
+    opt: '',
+    genres: '',
+    source: '',
+    platforms: ''
+  })
 
   useEffect(() => {
     dispatch(getByGenres()) // acá me estoy trayendo los generos por si no te acordás
-  }, [dispatch])
+    dispatch(filterGames(filters))
+    console.log(filters)
+    console.log('entré al useEffect que manda los filters')
+  }, [filters]) //eslint-disable-line
+
+  function handleSort (e) {
+    setFilters({
+      ...filters,
+      [e.target.name]: e.target.value
+    })
+    setCurrentPage(1)
+  }
 
   return (
     <div className={s.box}>
-      <select onChange={e => handleSort(e)}>
+      <select name='opt' onChange={e => handleSort(e)}>
         <option value=''> Order by... </option>
         <option value='A-Z'> A-Z </option>
         <option value='Z-A'> Z-A </option>
       </select>
-      <select onChange={e => handleRating(e)}>
+      <select name='rating' onChange={e => handleSort(e)}>
         <option value=''> Rating </option>
         <option value='ratingAsc'> Rating Ascending </option>
         <option value='ratingDesc'> Rating Descending </option>
 
       </select>
-      <select onChange={e => handleFilter(e)}>
+      <select name='genres' onChange={e => handleSort(e)}>
         {/* lo que estoy haciendo acá es traerme todos los generos del state y los mapeo y por cada uno devuelvo una opción para seleccionar */}
         <option value=''> Genres </option>
         {generos && generos.map(e => {
@@ -34,7 +52,7 @@ const Funcionalidades = ({ handleFilter, handleSource, handleSort, handleRating 
           )
         })}
       </select>
-      <select onChange={e => handleSource(e)}>
+      <select name='source' onChange={e => handleSort(e)}>
         <option value=''> All </option>
         <option value='api'> API </option>
         <option value='created'> Created </option>

@@ -3,15 +3,16 @@ import axios from 'axios'
 
 export const GET_ALL_VIDEOGAMES = 'GET_ALL_VIDEOGAMES'
 export const GET_BY_GENRES = 'GET_BY_GENRES'
-export const FILTER_BY_GENRE = 'FILTER_BY_GENRE'
-export const FILTER_BY_SOURCE = 'FILTER_BY_SOURCE'
-export const ORDER_BY = 'ORDER_BY'
-export const ORDER_BY_RATING = 'ORDER_BY_RATING'
+// export const FILTER_BY_GENRE = 'FILTER_BY_GENRE'
+// export const FILTER_BY_SOURCE = 'FILTER_BY_SOURCE'
+// export const ORDER_BY = 'ORDER_BY'
+// export const ORDER_BY_RATING = 'ORDER_BY_RATING'
 export const GET_NAME_VIDEOGAME = 'GET_NAME_VIDEOGAME'
 export const GET_PLATFORMS = 'GET_PLATFORMS'
 export const CREATE_VIDEOGAME = 'CREATE_VIDEOGAME'
 export const GET_VIDEOGAME = 'GET_VIDEOGAME'
 export const GET_LIKE = 'GET_LIKE'
+export const FILTER_GAMES = 'FILTER_GAMES'
 
 export function getAllVideogames () { // acá estoy conectando el front con el back, just like that
   return async function (dispatch) {
@@ -108,29 +109,43 @@ export const getPlatforms = () => {
     })
   }
 }
-
-export function filterGamesByGenres (payload) {
-  return {
-    type: 'FILTER_BY_GENRE',
-    payload
+export const filterGames = ({ rating, opt, genres, source, platforms }) => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.get(`http://localhost:3001/videogames/filters?rating=${rating}&opt=${opt}&genres=${genres}&source=${source}&platforms=${platforms}`)
+      console.log('yo soy la action', data)
+      return dispatch({
+        type: 'FILTER_GAMES',
+        payload: data
+      })
+    } catch (err) {
+      console.error(err)
+    }
   }
 }
 
-export function filterGamesBySource (payload) {
-  return {
-    type: 'FILTER_BY_SOURCE',
-    payload
-  }
-}
-export function orderBy (payload) {
-  return {
-    type: 'ORDER_BY',
-    payload
-  }
-}
-export function orderByRating (payload) {
-  return {
-    type: 'ORDER_BY_RATING',
-    payload
-  }
-}
+// export function filterGamesByGenres (payload) {
+//   return {
+//     type: 'FILTER_BY_GENRE',
+//     payload
+//   }
+// }
+
+// export function filterGamesBySource (payload) {
+//   return {
+//     type: 'FILTER_BY_SOURCE',
+//     payload
+//   }
+// }
+// export function orderBy (payload) {
+//   return {
+//     type: 'ORDER_BY',
+//     payload
+//   }
+// }
+// export function orderByRating (payload) {
+//   return {
+//     type: 'ORDER_BY_RATING',
+//     payload
+//   }
+// }

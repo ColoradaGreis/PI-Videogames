@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import { useDispatch, useSelector } from 'react-redux'
-import { getAllVideogames, filterGamesByGenres, filterGamesBySource, orderBy, orderByRating } from '../redux/actions/actions.js'
+import { useSelector } from 'react-redux'
+// import { getAllVideogames } from '../redux/actions/actions.js'
 // import {Link} from "react-router-dom"
 import Funcionalidades from './Funcionalidades.jsx'
 import Videogames from './Videogames.jsx'
@@ -12,7 +12,7 @@ import s from '../Style/Home.module.css'
 function Home () {
   const allGames = useSelector((state) => state.AllVideogames) // reemplazo al mapStateToProps, me conecta al estado sin tener que usar props
   console.log(allGames)
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   // Cada página me tiene que mostrar 15 juegos, yo me traigo 100 de la API
   const [currentPage, setCurrentPage] = useState(1) // lo seteo en 1 porque siempre arranco por la primer pagina
   const gamePerPage = 15 // juegos por pagina
@@ -24,60 +24,58 @@ function Home () {
     setCurrentPage(PageNumber)
   }
 
-  React.useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [currentPage])
+  // React.useEffect(() => {
+  //   window.scrollTo(0, 0)
+  // }, [currentPage])
 
-  // ----ORDER BY -----
-  function handleSort (e) {
-    e.preventDefault()
-    if (e.target.value === '') {
-      dispatch(getAllVideogames())
-    } else {
-      dispatch(orderBy(e.target.value))
-      setCurrentPage(1)
-    }
-  }
-  // ORDER BY RATING
-  function handleRating (e) {
-    e.preventDefault()
-    if (e.target.value === '') {
-      dispatch(getAllVideogames())
-    } else {
-      dispatch(orderByRating(e.target.value))
-      setCurrentPage(1)
-    }
-  }
+  // // ----ORDER BY -----
+  // function handleSort (e) {
+  //   e.preventDefault()
+  //   if (e.target.value === '') {
+  //     dispatch(getAllVideogames())
+  //   } else {
+  //     dispatch(orderBy(e.target.value))
+  //     setCurrentPage(1)
+  //   }
+  // }
+  // // ORDER BY RATING
+  // function handleRating (e) {
+  //   e.preventDefault()
+  //   if (e.target.value === '') {
+  //     dispatch(getAllVideogames())
+  //   } else {
+  //     dispatch(orderByRating(e.target.value))
+  //     setCurrentPage(1)
+  //   }
+  // }
 
-  // ---FILTER BY -----
-  function handleFilter (e) {
-    e.preventDefault()
-    if (e.target.value === '') {
-      dispatch(getAllVideogames())
-    } else {
-      dispatch(filterGamesByGenres(e.target.value))
-      setCurrentPage(1)
-    }
-  }
+  // // ---FILTER BY -----
+  // function handleFilter (e) {
+  //   e.preventDefault()
+  //   if (e.target.value === '') {
+  //     dispatch(getAllVideogames())
+  //   } else {
+  //     dispatch(filterGamesByGenres(e.target.value))
+  //     setCurrentPage(1)
+  //   }
+  // }
 
-  // ---- SOURCE/ORIGIN -----
-  function handleSource (e) {
-    e.preventDefault()
-    if (e.target.value === '') {
-      dispatch(getAllVideogames())
-    } else {
-      dispatch(filterGamesBySource(e.target.value))
-      setCurrentPage(1)
-    }
-  }
-  function handleNext (currentPage) {
-    const page = currentPage + 1
-    setCurrentPage(page)
-  }
-  function handlePrev (currentPage) {
-    const page = currentPage - 1
-    setCurrentPage(page)
-  }
+  // // ---- SOURCE/ORIGIN -----
+  // function handleSource (e) {
+  //   e.preventDefault()
+  //   if (e.target.value === '') {
+  //     dispatch(getAllVideogames())
+  //   } else {
+  //     dispatch(filterGamesBySource(e.target.value))
+  //     setCurrentPage(1)
+  //   }
+  // }
+  // function handleNext () {
+  //   setCurrentPage(currentPage + 1)
+  // }
+  // function handlePrev () {
+  //   setCurrentPage(currentPage - 1)
+  // }
 
   return (
 
@@ -85,7 +83,7 @@ function Home () {
       <NavBar setCurrentPage={setCurrentPage} />
 
       <div>
-        <Funcionalidades handleFilter={handleFilter} handleSource={handleSource} handleSort={handleSort} handleRating={handleRating} /> {/*  Acá me estoy trayendo los filter orderby y source */}
+        <Funcionalidades setCurrentPage={setCurrentPage} /> {/*  Acá me estoy trayendo los filter orderby y source */}
       </div>
 
       <div>
@@ -94,8 +92,8 @@ function Home () {
           paginado={paginado}
 
         />
-        <button className={s.btn} onClick={() => handlePrev(currentPage)}><span> {'<<'} </span></button>
-        <button className={s.btn} onClick={() => handleNext(currentPage)}><span> {'>>'} </span></button>
+        {/* <button className={s.btn} onClick={() => handlePrev()}><span> {'<<'} </span></button>
+        <button className={s.btn} onClick={() => handleNext()}><span> {'>>'} </span></button> */}
 
       </div>
       <div>
