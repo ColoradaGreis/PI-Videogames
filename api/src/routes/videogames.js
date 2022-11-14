@@ -70,7 +70,59 @@ router.get('/platforms', async (req, res, next) => {
         }catch(e) {
             next(e)
         }
-    })
+})
+
+router.get('/filters', async(req, res) => {
+    const {rating, opt, genres, source, platforms} = req.query
+    try {
+        let videoGames= await getAllVideogames()
+        // console.log(videoGames, 'aca estoy mostrando lo que me da la ruta del back')
+
+        if(genres){
+            videoGames = videoGames.filter(e => e.genres.findAll(genres)  )
+        }
+        if(platforms){
+            videoGames = videoGames.platforms.filter(e => e === platforms)
+        }
+        if(source === 'api'){
+            videoGames = videoGames.filter(e => !e.createdinDb)
+        } else if(source === 'created'){
+            videoGames = videoGames.filter(e => e.createdinDb)
+        }
+        if(!videoGames.length) return res.status(200).json('there are no games with the filters selected')
+               
+        if(rating === 'ratingAsc'){
+            videoGames = videoGames.sort((a,b) =>{
+                if(a.rating < b.rating) return 1
+                if(a.rating > b.rating) return -1
+                return 0
+            })
+        } else if(rating === 'ratingDesc'){
+            videoGames = videoGames.sort((a,b) =>{
+                if(a.rating > b.rating) return 1
+                if(a.rating < b.rating) return -1
+                return 0
+            })
+
+        }
+        if(opt === 'A-Z'){
+            videoGames = videoGames.sort((a,b) => {
+                if(a.name.toLowerCase() < b.name.toLowerCase()) return 1
+                if(a.name.toLowerCase() > b.name.toLowerCase()) return -1
+                return 0    
+            })
+        } else if(opt === 'Z-A'){
+            videoGames = videoGames.sort((a,b) => {
+                if(a.name.toLowerCase() > b.name.toLowerCase()) return 1
+                if(a.name.toLowerCase() < b.name.toLowerCase()) return -1
+                return 0    
+            })
+        }
+        res.status(200).json(videoGames)
+    } catch (error) {
+        res.status(400).json(error.message)
+    }
+})
 
 
 
