@@ -32,7 +32,7 @@ const Funcionalidades = ({ setCurrentPage }) => {
   return (
     <div className={s.box}>
       <select name='opt' onChange={e => handleSort(e)}>
-        <option value=''> Order by... </option>
+        <option value='' id='opt'> Order by... </option>
         <option value='A-Z'> A-Z </option>
         <option value='Z-A'> Z-A </option>
         <option value='ratingAsc'> Rating Ascending </option>
@@ -41,7 +41,7 @@ const Funcionalidades = ({ setCurrentPage }) => {
 
       <select name='genres' onChange={e => handleSort(e)}>
         {/* lo que estoy haciendo acá es traerme todos los generos del state y los mapeo y por cada uno devuelvo una opción para seleccionar */}
-        <option value=''> Genres </option>
+        <option value='' id='genres'> Genres </option>
         {generos && generos.map(e => {
           return (
             <option key={e.id} value={e.name}> {e.name} </option>
@@ -49,7 +49,7 @@ const Funcionalidades = ({ setCurrentPage }) => {
         })}
       </select>
       <select name='source' onChange={e => handleSort(e)}>
-        <option value=''> All </option>
+        <option value='' id='source'> All </option>
         <option value='api'> API </option>
         <option value='created'> Created </option>
       </select>
