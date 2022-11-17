@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { getByGenres, filterGames } from '../redux/actions/actions'
+import { getByGenres, filterGames, clearFilters } from '../redux/actions/actions'
 import s from '../Style/Funcionalidades.module.css'
 
 const Funcionalidades = ({ setCurrentPage }) => {
   const dispatch = useDispatch()
   const generos = useSelector(state => state.genres)
   const [filters, setFilters] = useState({
-    rating: '',
     opt: '',
     genres: '',
     source: '',
@@ -36,13 +35,10 @@ const Funcionalidades = ({ setCurrentPage }) => {
         <option value=''> Order by... </option>
         <option value='A-Z'> A-Z </option>
         <option value='Z-A'> Z-A </option>
-      </select>
-      <select name='rating' onChange={e => handleSort(e)}>
-        <option value=''> Rating </option>
         <option value='ratingAsc'> Rating Ascending </option>
         <option value='ratingDesc'> Rating Descending </option>
-
       </select>
+
       <select name='genres' onChange={e => handleSort(e)}>
         {/* lo que estoy haciendo acá es traerme todos los generos del state y los mapeo y por cada uno devuelvo una opción para seleccionar */}
         <option value=''> Genres </option>
@@ -57,6 +53,21 @@ const Funcionalidades = ({ setCurrentPage }) => {
         <option value='api'> API </option>
         <option value='created'> Created </option>
       </select>
+      <button
+        className={s.limpiarFiltros} onClick={() => {
+          setFilters({
+            opt: '',
+            genres: '',
+            source: '',
+            platforms: ''
+          })
+          dispatch(clearFilters())
+          document.getElementById('opt').selected = true
+          document.getElementById('genres').selected = true
+          document.getElementById('source').selected = true
+        }}
+      > Limpiar Filtros
+      </button>
     </div>
   )
 }

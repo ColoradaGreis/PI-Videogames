@@ -13,6 +13,7 @@ export const CREATE_VIDEOGAME = 'CREATE_VIDEOGAME'
 export const GET_VIDEOGAME = 'GET_VIDEOGAME'
 export const GET_LIKE = 'GET_LIKE'
 export const FILTER_GAMES = 'FILTER_GAMES'
+export const CLEAR_FILTER = 'CLEAR_FILTER'
 
 export function getAllVideogames () { // acá estoy conectando el front con el back, just like that
   return async function (dispatch) {
@@ -122,6 +123,9 @@ export const filterGames = ({ rating, opt, genres, source, platforms }) => {
       console.error(err)
     }
   }
+}
+export const clearFilters = () => {
+  return { type: 'CLEAR_FILTER', payload: null }
 }
 
 // export function filterGamesByGenres (payload) {
