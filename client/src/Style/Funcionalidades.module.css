@@ -26,4 +26,17 @@ body {
     transform: scale(1.055);
     cursor:pointer;
 }
-
+.btn{
+    display: inline;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    padding: 7px;
+    background-color: #a2a5c6;
+    color: #07070e;
+    margin: 10px;
+}
+.btn:hover{
+    transform: scale(1.055);
+    cursor:pointer;
+}

@@ -54,7 +54,8 @@ const Funcionalidades = ({ setCurrentPage }) => {
         <option value='created'> Created </option>
       </select>
       <button
-        className={s.limpiarFiltros} onClick={() => {
+        className={s.btn}
+        onClick={() => {
           setFilters({
             opt: '',
             genres: '',
@@ -66,7 +67,7 @@ const Funcionalidades = ({ setCurrentPage }) => {
           document.getElementById('genres').selected = true
           document.getElementById('source').selected = true
         }}
-      > Limpiar Filtros
+      > Clear Filters
       </button>
     </div>
   )

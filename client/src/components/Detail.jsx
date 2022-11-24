@@ -28,9 +28,12 @@ function Detail () {
   return (
     <div className={s.body}>
       <div className={s.main_card}>
+        <h1 className={s.nombre}>{details.name}</h1>
+        <div className={s.card_right}>
+          <img src={details.img ? details.img : img} alt={`${details.name}'s`} width='300px' height='150px' />
+        </div>
         <div className={s.card_left}>
           <div className={s.card_details}>
-            <h1 className={s.nombre}>{details.name}</h1>
             <div className={s.card_cat}>
               <p className={s.rating}>⭐ {details.rating}</p>
               <p className={s.genres}>{details.genres?.map(g => (g.name ? g.name : g)).join('| ')}</p>
@@ -40,13 +43,10 @@ function Detail () {
             <div className={s.plataformas}>🎮: {details.platforms?.join(', ')}</div>
           </div>
         </div>
-        <div className={s.card_right}>
-          <img src={details.img ? details.img : img} alt={`${details.name}'s`} width='300px' height='150px' />
-        </div>
       </div>
-      <div>
+      <div className={s.boton}>
         <NavLink className={s.link} to='/home'>
-          <span className={s.btn}>↵ Back Home</span>
+          <span className={s.btn}>Back Home</span>
         </NavLink>
       </div>
 
