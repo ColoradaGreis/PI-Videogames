@@ -18,7 +18,7 @@ export const CLEAR_FILTER = 'CLEAR_FILTER'
 export function getAllVideogames () { // acá estoy conectando el front con el back, just like that
   return async function (dispatch) {
     try {
-      const { data } = await axios.get('http://localhost:3001/videogames')
+      const { data } = await axios.get('/videogames')
       return dispatch({
         type: 'GET_ALL_VIDEOGAMES',
         payload: data
@@ -42,7 +42,7 @@ export function getAllVideogames () { // acá estoy conectando el front con el b
 export function getNameVideogame (name) {
   return async function (dispatch) {
     try {
-      const { data } = await axios.get(`http://localhost:3001/videogames?name=${name}`)
+      const { data } = await axios.get(`/videogames?name=${name}`)
 
       return dispatch({
         type: 'GET_NAME_VIDEOGAME',
@@ -58,7 +58,7 @@ export function getNameVideogame (name) {
 export const getVideogame = (id) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(`http://localhost:3001/videogame/${id}`)
+      const { data } = await axios.get(`/videogame/${id}`)
       return dispatch({
         type: 'GET_VIDEOGAME',
         payload: data
@@ -72,7 +72,7 @@ export const getVideogame = (id) => {
 export function getByGenres () {
   return async (dispatch) => {
     try {
-      const { data } = await axios.get('http://localhost:3001/genres')
+      const { data } = await axios.get('/genres')
       return dispatch({
         type: 'GET_BY_GENRES',
         payload: data
@@ -86,7 +86,7 @@ export const createVideogame = (videogame) => {
   return async (dispatch) => {
     try {
       const { data } = await axios.post(
-        'http://localhost:3001/videogames/create',
+        '/videogames/create',
         videogame
       )
       alert('Your game has been created')
@@ -102,7 +102,7 @@ export const createVideogame = (videogame) => {
 }
 export const getPlatforms = () => {
   return async (dispatch) => {
-    const url = await axios.get('http://localhost:3001/videogames/platforms')
+    const url = await axios.get('/videogames/platforms')
     console.log(url)
     return dispatch({
       type: 'GET_PLATFORMS',
@@ -113,7 +113,7 @@ export const getPlatforms = () => {
 export const filterGames = ({ rating, opt, genres, source, platforms }) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(`http://localhost:3001/videogames/filters?rating=${rating}&opt=${opt}&genres=${genres}&source=${source}&platforms=${platforms}`)
+      const { data } = await axios.get(`/videogames/filters?rating=${rating}&opt=${opt}&genres=${genres}&source=${source}&platforms=${platforms}`)
       console.log('yo soy la action', data)
       return dispatch({
         type: 'FILTER_GAMES',
