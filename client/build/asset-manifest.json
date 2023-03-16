@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9fe4e224.chunk.css",
+    "main.js": "/static/js/main.566b6fde.chunk.js",
+    "main.js.map": "/static/js/main.566b6fde.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.dc0c4d2f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.dc0c4d2f.js.map",
+    "static/js/2.818d8d93.chunk.js": "/static/js/2.818d8d93.chunk.js",
+    "static/js/2.818d8d93.chunk.js.map": "/static/js/2.818d8d93.chunk.js.map",
+    "static/js/3.832d2651.chunk.js": "/static/js/3.832d2651.chunk.js",
+    "static/js/3.832d2651.chunk.js.map": "/static/js/3.832d2651.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.9fe4e224.chunk.css.map": "/static/css/main.9fe4e224.chunk.css.map",
+    "static/js/2.818d8d93.chunk.js.LICENSE.txt": "/static/js/2.818d8d93.chunk.js.LICENSE.txt",
+    "static/media/GithubLogo.c42aa4a3.png": "/static/media/GithubLogo.c42aa4a3.png",
+    "static/media/GmailIconBlack.4ab023b6.jpg": "/static/media/GmailIconBlack.4ab023b6.jpg",
+    "static/media/LinkedIn.4154dd27.png": "/static/media/LinkedIn.4154dd27.png",
+    "static/media/App.css": "/static/media/backgroundImage.gif.04e40095.gif",
+    "static/media/loading.d497af64.gif": "/static/media/loading.d497af64.gif",
+    "static/media/penguin.aa914a7f.webp": "/static/media/penguin.aa914a7f.webp",
+    "static/media/pixlr-bg-result.90decee2.png": "/static/media/pixlr-bg-result.90decee2.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dc0c4d2f.js",
+    "static/js/2.818d8d93.chunk.js",
+    "static/css/main.9fe4e224.chunk.css",
+    "static/js/main.566b6fde.chunk.js"
+  ]
+}

@@ -37,3 +37,45 @@
   color:beige;
   padding: 4px;
 }
+@media screen and (max-width: 600px) {
+    .buscar input{
+        height: 1vh;
+        width: 40vw;
+        font-family: 'Orbitron';
+        font-size: 16px;
+        border-radius: 30px;
+        background: #303462;
+        margin: 15px 20px;
+        border: 1px solid #c9dbe4;
+        color:beige;
+        padding: 15px;
+        box-shadow: 
+        0 0 3px #a2a5c6,
+        0 0 6px #7c80af,
+        0 0 9px #7c80af,
+        0 0 12px #696ea3,
+        0 0 15px #575c98,
+        0 0 18px #444a8c;
+    
+    }
+    
+    .btn {
+        background-color: #2b2d42;
+        border: none;
+        cursor: pointer;
+    }
+    .btn img {
+        height: 35px;
+        margin: -11px;
+    }
+    .btn:active {
+        background-color: darkgrey;
+        box-shadow: 0 2px #666;
+        transform: translateY(2px);
+    }
+    ::placeholder {
+      color:beige;
+      padding: 4px;
+      font-size: smaller;
+    }
+}

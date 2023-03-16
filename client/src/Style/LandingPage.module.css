@@ -82,3 +82,15 @@ html, body {
     vertical-align: middle;
     display: table-cell;
 }
+@media (max-width: 768px) {
+    .text {
+        font-size: 80px;
+    }
+    .btn {
+        font-size: 15px;
+        padding: 10px;
+    }
+    .links {
+        margin-bottom: -200px;
+    }
+}

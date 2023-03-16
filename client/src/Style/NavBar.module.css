@@ -87,3 +87,29 @@
     box-shadow: 0 2px #07070e;
     transform: translateY(2px);
 }
+@media screen and (max-width: 600px) {
+    .opcion{
+        width: 100%;
+        padding: 15px;
+    }
+    .to{
+        width: 100%;
+        /* padding: 5px; */
+        font-size: 15px;
+    }
+    .btn{
+        /* width: 100%; */
+        /* padding: 15px; */
+        font-size: 15px;
+        float: inherit;
+        margin-top: 5px;
+    }
+    .search{
+        justify-content: center;
+        padding: 10px;
+    }
+    .nav{
+        flex-direction: column;
+        justify-self: center;
+    }
+}

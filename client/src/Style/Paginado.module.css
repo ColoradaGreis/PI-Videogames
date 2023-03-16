@@ -36,3 +36,12 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+@media screen and (max-width: 600px) {
+  .btn{
+    /* width: 100%; */
+    padding: 15px;
+    font-size: 10px;
+    float: inherit;
+    margin-top: 5px;
+  }
+}

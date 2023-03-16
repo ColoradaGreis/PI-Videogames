@@ -40,3 +40,14 @@ body {
     transform: scale(1.055);
     cursor:pointer;
 }
+@media screen and (max-width: 600px) {
+    .box select {
+        width: 90%;
+        padding: 15px;
+    }
+    .btn{
+        width: 90%;
+        padding: 15px;
+    }
+}
+    

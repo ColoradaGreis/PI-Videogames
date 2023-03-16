@@ -85,3 +85,15 @@
 .navlink{
     text-decoration: none;
 }
+@media screen and (max-width: 768px) {
+    .card{
+        width:200px;
+        margin:20px 0;
+    }
+}
+@media screen and (max-width: 480px) {
+    .card{
+        width:180px;
+        margin:20px 0;
+    }
+}
