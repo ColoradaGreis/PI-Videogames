@@ -1,7 +1,18 @@
 .error{
     color: aliceblue;
     font-size: 40px;
-    position: fixed;
+    /* position: fixed; */
     top: 500px;
     text-shadow: 6px 5px rgb(22, 202, 242), 8px 10px rgb(216, 22, 242);
+    justify-content: center;
+    padding: 200px
+}
+@media screen and (max-width: 600px) {
+    .error{
+        font-size: 20px;
+        top: 300px;
+        padding: 30px;
+    }
+
+    
 }

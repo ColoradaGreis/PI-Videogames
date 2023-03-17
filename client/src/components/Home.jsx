@@ -8,6 +8,7 @@ import Videogames from './Videogames.jsx'
 import Paginado from './Paginado.jsx'
 import NavBar from './NavBar.jsx'
 import s from '../Style/Home.module.css'
+import Error from './Error.jsx'
 
 function Home () {
   const allGames = useSelector((state) => state.AllVideogames) // reemplazo al mapStateToProps, me conecta al estado sin tener que usar props
@@ -97,7 +98,11 @@ function Home () {
 
       </div>
       <div>
-        <Videogames currentGames={currentGames} />
+        {
+        typeof currentGames === 'string'
+          ? <Error />
+          : <Videogames currentGames={currentGames} />
+       }
 
       </div>
 
