@@ -233,3 +233,50 @@ textarea:valid~.label{
 .test:active{
     background: #0e0f1c,
 }
+@media screen and (max-width: 600px) {
+    .create_input {
+        width: 100%;
+    }
+    .box_home {
+        margin-top: 0px;
+    }
+    .back_home {
+        width: 100%;
+    }
+    .test {
+        width: 100%;
+    }
+    .box_opcion {
+        margin-bottom: 0px;
+    }
+    .opcion_title {
+        font-size: 10px;
+    }
+    .btn_remove {
+        width: 20px;
+        height: 15px;
+    }
+    .danger {
+        font-size: 10px;
+    }
+    .select_create {
+        margin: 0px;
+    }
+    .label {
+        font-size: 15px;
+    }
+    .description {
+        font-size: 15px;
+    }
+    .barra {
+        width: 100%;
+    }
+    .barra::before {
+        width: 100%;
+    }
+    textarea {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+    
