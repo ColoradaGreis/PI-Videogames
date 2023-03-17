@@ -5,7 +5,8 @@ import {
   CREATE_VIDEOGAME,
   GET_VIDEOGAME,
   FILTER_GAMES,
-  CLEAR_FILTER
+  CLEAR_FILTER,
+  GET_PLATFORMS
 } from '../actions/actions.js'
 // DATO DE COLOR: la lógica va fuera del return... si lo pones dentro se te va a romper
 
@@ -58,6 +59,11 @@ function rootReducer (state = initialState, action) {
       return {
         ...state,
         AllVideogames: state.videogames
+      }
+    case GET_PLATFORMS:
+      return {
+        ...state,
+        platforms: action.payload
       }
     default: return { ...state }
   }

@@ -61,7 +61,8 @@ function VideogameCreate () {
   useEffect(() => {
     dispatch(getByGenres())
     dispatch(getPlatforms())
-  }, [dispatch])
+    console.log(plataformas, 'acá estoy en el create')
+  }, [dispatch, plataformas])
 
   function handleSubmit (e) {
     e.preventDefault()

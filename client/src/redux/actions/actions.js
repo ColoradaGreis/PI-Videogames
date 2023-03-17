@@ -103,7 +103,7 @@ export const createVideogame = (videogame) => {
 export const getPlatforms = () => {
   return async (dispatch) => {
     const url = await axios.get('/videogames/platforms')
-    console.log(url)
+    console.log(url, 'soy la url de las plataformas')
     return dispatch({
       type: 'GET_PLATFORMS',
       payload: url.data
